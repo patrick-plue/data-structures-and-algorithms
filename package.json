@@ -1,0 +1,23 @@
+{
+  "name": "data-structures-and-algorhytms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bubblesort.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrick-plue/data-structures-and-algorhytms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrick-plue/data-structures-and-algorhytms/issues"
+  },
+  "homepage": "https://github.com/patrick-plue/data-structures-and-algorhytms#readme",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}

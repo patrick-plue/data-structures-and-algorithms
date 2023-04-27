@@ -2,18 +2,23 @@ let nums = [3, 2, 1, 6, 4, 5, 6, 7];
 
 let cities = ["Berlin", "Madrid", "Washington", "Florenz"];
 
-function bubbleSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
+function bubbleSort(nums) {
+  let swapped = false;
+  do {
+    swapped = false;
+    for (let i = 0; i < nums.length - 1; i++) {
+      if (nums[i] > nums[i + 1]) {
+        let temp = nums[i];
+        nums[i] = nums[i + 1];
+        nums[i + 1] = temp;
+        swapped = true;
       }
     }
-  }
-  console.log(arr);
+  } while (swapped);
+  return nums;
 }
 
 bubbleSort(nums);
 bubbleSort(cities);
+
+module.exports = { bubbleSort };
