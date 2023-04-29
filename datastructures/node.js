@@ -29,8 +29,7 @@ currentNode.setNextNode(vanillaNode);
 
 while (currentNode !== null) {
   console.log(currentNode.data);
-  let next = currentNode.getNextNode();
-  currentNode = next;
+  currentNode = currentNode.getNextNode();
 }
 
 module.exports = Node;
