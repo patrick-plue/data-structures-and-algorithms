@@ -59,3 +59,39 @@ function swapNodes(list, data1, data2) {
   node1.setNextNode(node2.getNextNode());
   node2.setNextNode(temp);
 }
+
+// Two Pointer to fine nth last element
+
+const nthLastNode = (linkedList, n) => {
+  let current = null;
+  let tailSeeker = linkedList.head;
+  let count = 0;
+  while (tailSeeker) {
+    tailSeeker = tailSeeker.next;
+    if (count >= n) {
+      if (!current) {
+        current = linkedList.head;
+      }
+      current = current.next;
+    }
+    count++;
+  }
+  return current;
+};
+
+// find middle node of linked list; returned right weighted element if even length
+
+const findMiddle = (linkedList) => {
+  let fast = linkedList.head;
+  let slow = linkedList.head;
+
+  while (!fast !== null) {
+    fast = fast.getNextNode();
+
+    if (fast !== null) {
+      fast = fast.getNextNode();
+      slow = slow.getNextNode();
+    }
+  }
+  return slow;
+};
