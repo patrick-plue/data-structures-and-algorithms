@@ -95,3 +95,18 @@ const findMiddle = (linkedList) => {
   }
   return slow;
 };
+
+const findMiddleAlternative = (linkedList) => {
+  let count = 0;
+  let fast = linkedList.head;
+  let slow = linkedList.head;
+
+  while (fast !== null) {
+    fast = fast.getNextNode();
+    if (count % 2 !== 0) {
+      slow = slow.getNextNode();
+    }
+    count++;
+  }
+  return slow;
+};
