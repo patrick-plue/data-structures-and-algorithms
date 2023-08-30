@@ -1,4 +1,7 @@
-const { LinkedList } = require("../datastructures/LinkedList.js");
+const {
+  LinkedList,
+  DoublyLinkedList,
+} = require("../datastructures/LinkedList.js");
 
 const testList = new LinkedList();
 for (let i = 0; i <= 10; i++) {
@@ -6,7 +9,9 @@ for (let i = 0; i <= 10; i++) {
 }
 
 testList.printList();
-swapNodes(testList, 2, 5);
+// swapNodes(testList, 3, 8);
+// testList.printList();
+console.log(testList.removeHead());
 testList.printList();
 
 function swapNodes(list, data1, data2) {
@@ -60,7 +65,7 @@ function swapNodes(list, data1, data2) {
   node2.setNextNode(temp);
 }
 
-// Two Pointer to fine nth last element
+// // Two Pointer to fine nth last element
 
 const nthLastNode = (linkedList, n) => {
   let current = null;
@@ -79,13 +84,20 @@ const nthLastNode = (linkedList, n) => {
   return current;
 };
 
-// find middle node of linked list; returned right weighted element if even length
+const testDoubleList = new DoublyLinkedList();
+for (let i = 0; i <= 11; i++) {
+  testDoubleList.addToTail(i);
+}
+// console.log(nthLastNode(testDoubleList, 5));
 
+// // find middle node of linked list; return right weighted element when there is no real middle
+// fast pointer moves forward 2 steps; slow pointer moves forward 1 stet; when fast
+// pointer has reached the end the slow pointer is in the middle of it
 const findMiddle = (linkedList) => {
   let fast = linkedList.head;
   let slow = linkedList.head;
 
-  while (!fast !== null) {
+  while (fast !== null) {
     fast = fast.getNextNode();
 
     if (fast !== null) {
@@ -96,6 +108,9 @@ const findMiddle = (linkedList) => {
   return slow;
 };
 
+console.log("middle", findMiddle(testDoubleList).data);
+
+// move the fast pointer with every iteration; the slow pointer just with every-other iteration
 const findMiddleAlternative = (linkedList) => {
   let count = 0;
   let fast = linkedList.head;
@@ -110,3 +125,5 @@ const findMiddleAlternative = (linkedList) => {
   }
   return slow;
 };
+
+console.log("middle", findMiddleAlternative(testDoubleList).data);

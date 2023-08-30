@@ -19,20 +19,20 @@ class SimpleNode {
   }
 }
 
-const strawberryNode = new SimpleNode("Berry Tasty");
-const vanillaNode = new SimpleNode("Vanilla");
-const coconutNode = new SimpleNode("Coconuts for Coconut");
+// const strawberryNode = new SimpleNode("Berry Tasty");
+// const vanillaNode = new SimpleNode("Vanilla");
+// const coconutNode = new SimpleNode("Coconuts for Coconut");
 
-vanillaNode.setNextNode(strawberryNode);
-strawberryNode.setNextNode(coconutNode);
+// vanillaNode.setNextNode(strawberryNode);
+// strawberryNode.setNextNode(coconutNode);
 
-let currentNode = new SimpleNode();
-currentNode.setNextNode(vanillaNode);
+// let currentNode = new SimpleNode("first");
+// currentNode.setNextNode(vanillaNode);
 
-while (currentNode !== null) {
-  console.log(currentNode.data);
-  currentNode = currentNode.getNextNode();
-}
+// while (currentNode !== null) {
+//   console.log(currentNode.data);
+//   currentNode = currentNode.getNextNode();
+// }
 
 // Node class for double linked list
 
