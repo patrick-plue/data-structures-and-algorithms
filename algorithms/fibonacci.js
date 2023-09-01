@@ -19,3 +19,6 @@ function fibonacciLoop(n) {
   }
   return sequence[n];
 }
+
+console.log(fibonacci(70));
+console.log(fibonacciLoop(70));

@@ -1,16 +1,11 @@
 //own implementation
-
 function quickSort(array) {
   if (array.length < 2) {
     return array;
   }
   let pivot = array.pop();
-  console.log({ pivot });
   const leftArray = array.filter((el) => el <= pivot);
-  console.log({ leftArray });
   const rightArray = array.filter((el) => el > pivot);
-  console.log({ rightArray });
-
   return [...quickSort(leftArray), pivot, ...quickSort(rightArray)];
 }
 
@@ -24,3 +19,27 @@ we call quicksort again on these arrays
 until they just have one element; than we return that array
 at the end we concatenate the left array with the pivot and with the right array
 */
+
+function quickSortB(nums) {
+  if (nums.length <= 1) return nums;
+
+  const pivot = nums[nums.length - 1];
+
+  const left = [];
+  const right = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < pivot) {
+      left.push(nums[i]);
+    } else {
+      right.push(nums[i]);
+    }
+  }
+
+  const sortedLeft = quickSort(left);
+  const sortedRight = quickSort(right);
+
+  return sortedLeft.concat(pivot, sortedRight);
+}
+
+console.log(quickSortB([32, 121, 5, 3, 312, 1, 2, 34, 5, 6]));
