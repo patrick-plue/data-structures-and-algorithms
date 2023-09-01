@@ -67,4 +67,6 @@ class Node {
   }
 }
 
-module.exports = { Node, SimpleNode };
+class TreeNode {}
+
+module.exports = { Node, SimpleNode, TreeNode };
