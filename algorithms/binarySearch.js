@@ -1,3 +1,5 @@
+// just for already sorted data;
+
 function binarySearch(array, item) {
   let high = array.length - 1;
   let low = 0;
@@ -8,10 +10,11 @@ function binarySearch(array, item) {
     count++;
     console.log("binary", { steps: count });
     middle = Math.floor((high + low) / 2);
+    let guess = array[middle];
 
-    if (array[middle] === item) {
+    if (guess === item) {
       return middle;
-    } else if (array[middle] > item) {
+    } else if (guess > item) {
       high = middle - 1;
     } else {
       low = middle + 1;
