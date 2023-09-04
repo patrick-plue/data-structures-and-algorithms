@@ -9,7 +9,7 @@ function quickSort(array) {
   return [...quickSort(leftArray), pivot, ...quickSort(rightArray)];
 }
 
-console.log(quickSort([9, 2, 63, 5, 4, 123, 444, 894, 1, -12, 434, 123]));
+// console.log(quickSort([9, 2, 63, 5, 4, 123, 444, 894, 1, -12, 434, 123]));
 
 /* last element in the array is our pivot
  we devide the array into two
@@ -24,6 +24,20 @@ function quickSortB(nums) {
   if (nums.length <= 1) return nums;
 
   const pivot = nums[nums.length - 1];
+
+  // find a better pivot
+  // const pivot = Math.max(
+  //   Math.min(
+  //     nums[0],
+  //     nums[nums.length - 1],
+  //     Math.min(
+  //       Math.max(nums[0], nums[nums.length - 1]),
+  //       nums[Math.floor((nums.length - 1) / 2)]
+  //     )
+  //   )
+  // );
+
+  console.log({ pivot });
 
   const left = [];
   const right = [];
@@ -42,4 +56,9 @@ function quickSortB(nums) {
   return sortedLeft.concat(pivot, sortedRight);
 }
 
-console.log(quickSortB([32, 121, 5, 3, 312, 1, 2, 34, 5, 6]));
+console.log(
+  quickSortB([
+    32, 121, 5, 3, 312, 1, 23323, 121, 23455, 2, -244, 223, 4, 1123, 4, 2, 34,
+    5, 6,
+  ])
+);
