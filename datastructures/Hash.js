@@ -1,5 +1,6 @@
 // not production ready but helps to understand the basic strucutre
-const { LinkedList } = require("./LinkedList.js");
+const { LinkedList } = require("./LinkedList");
+
 const { SimpleNode } = require("./Node.js");
 
 class SimpleHashMap {
