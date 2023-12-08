@@ -1,24 +1,24 @@
-let nums = [3, 2, 1, 6, 4, 5, 6, 7];
+let nums = [3, 2, 1, 6, 4, 5, 6, 7, 1];
 
 let cities = ["Berlin", "Madrid", "Washington", "Florenz"];
 
-function bubbleSort(nums) {
+function bubbleSort(array) {
   let swapped = false;
   do {
     swapped = false;
-    for (let i = 0; i < nums.length - 1; i++) {
-      if (nums[i] > nums[i + 1]) {
-        let temp = nums[i];
-        nums[i] = nums[i + 1];
-        nums[i + 1] = temp;
+    for (let i = 0; i < array.length - 1; i++) {
+      if (array[i] > array[i + 1]) {
+        let temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
         swapped = true;
       }
     }
   } while (swapped);
-  return nums;
+  return array;
 }
 
-bubbleSort(nums);
-bubbleSort(cities);
+console.log(bubbleSort(nums));
+console.log(bubbleSort(cities));
 
 module.exports = { bubbleSort };
