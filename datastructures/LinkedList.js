@@ -17,6 +17,7 @@ class LinkedList {
   }
 
   addToTail(data) {
+    1;
     //we start at the beginning to move through the nodes
     let tail = this.head;
     // if there is no tail this means there is no element so we can put the new element as head
